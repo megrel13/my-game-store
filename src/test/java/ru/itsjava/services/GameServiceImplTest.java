@@ -3,19 +3,19 @@ package ru.itsjava.services;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.itsjava.domain.Games;
+import ru.itsjava.domain.Game;
 
 import java.util.*;
 
 public class GameServiceImplTest {
-    List<Games> games = new ArrayList<>();
+    List<Game> games = new ArrayList<>();
 
 
     @DisplayName("Проверка метода buyGamesByName")
     @Test
     public void checkBuyGamesByNameMethod() {
 
-        Games expectedGames = new Games("Warcraft", "Blizzard");
+        Game expectedGames = new Game("Warcraft", "Blizzard");
         games.add(expectedGames);
 
         GamesServiceImpl service = new GamesServiceImpl(games);
@@ -26,8 +26,8 @@ public class GameServiceImplTest {
     @Test
     public void checkSellGamesMethod() {
 
-        Games expectedGames1 = new Games("Warcraft", "Blizzard");
-        Games expectedGames2 = new Games("Battlefield", "EA");
+        Game expectedGames1 = new Game("Warcraft", "Blizzard");
+        Game expectedGames2 = new Game("Battlefield", "EA");
         games.add(expectedGames1);
         games.add(expectedGames2);
 
@@ -39,21 +39,10 @@ public class GameServiceImplTest {
     @Test
     public void checkHasGamesMethod() {
 
-        Games expectedGames = new Games("Warcraft", "Blizzard");
+        Game expectedGames = new Game("Warcraft", "Blizzard");
         games.add(expectedGames);
 
         Assertions.assertTrue(games.contains(expectedGames));
     }
 
-    @DisplayName("Проверка метода printGames")
-    @Test
-    public void checkPrintGamesMethod() {
-
-        Games expectedGames = new Games("Warcraft", "Blizzard");
-        games.add(expectedGames);
-
-
-        Assertions.assertEquals(expectedGames, games.get(0));
-
     }
-}

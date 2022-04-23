@@ -1,7 +1,7 @@
 package ru.itsjava.services;
 
 import lombok.RequiredArgsConstructor;
-import ru.itsjava.domain.Games;
+import ru.itsjava.domain.Game;
 import ru.itsjava.domain.Client;
 
 import java.util.Scanner;
@@ -33,7 +33,7 @@ public class ClientServiceImpl  implements ClientService{
         System.out.println("Введите автора игры");
         String author = scanner.next();
 
-        Games games = new Games(name, author);
+        Game games = new Game(name, author);
         gameService.sellGames(games);
 
     }

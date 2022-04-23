@@ -8,6 +8,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class Client {
     private final String name;
-    private final List<Games> games;
+    private final List<Game> games;
 
 }

@@ -1,6 +1,6 @@
 package ru.itsjava.services;
 
-import ru.itsjava.domain.Games;
+import ru.itsjava.domain.Game;
 import ru.itsjava.domain.Client;
 
 import java.util.ArrayList;
@@ -18,11 +18,11 @@ public class StoreServiceImpl implements StoreService {
 
         Client client = new Client(clientName, new ArrayList<>());
 
-        List<Games> GamesList = new ArrayList<>();
+        List<Game> GamesList = new ArrayList<>();
 
-        GamesList.add(new Games("The Witcher", "CDProjectRed"));
-        GamesList.add(new Games("Battlefield", "EA"));
-        GamesList.add(new Games("CS:GO", "Valve"));
+        GamesList.add(new Game("The Witcher", "CDProjectRed"));
+        GamesList.add(new Game("Battlefield", "EA"));
+        GamesList.add(new Game("CS:GO", "Valve"));
 
         GameService gameService = new GamesServiceImpl(GamesList);
 

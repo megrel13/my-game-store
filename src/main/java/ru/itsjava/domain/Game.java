@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 
 @Data
 @RequiredArgsConstructor
-public class Games {
+public class Game {
     private final String name;
     private final String author;
 }

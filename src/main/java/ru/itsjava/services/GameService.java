@@ -1,11 +1,11 @@
 package ru.itsjava.services;
 
-import ru.itsjava.domain.Games;
+import ru.itsjava.domain.Game;
 
 public interface GameService {
-    Games buyGamesByName (String name);
+    Game buyGamesByName (String name);
 
-    void sellGames (Games games);
+    void sellGames (Game games);
 
     boolean hasGames (String name);
 

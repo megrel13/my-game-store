@@ -1,20 +1,19 @@
 package ru.itsjava.services;
 
 import lombok.RequiredArgsConstructor;
-import ru.itsjava.domain.Games;
-import ru.itsjava.services.GameService;
+import ru.itsjava.domain.Game;
 
 import java.util.List;
 
 @RequiredArgsConstructor
 public class GamesServiceImpl implements GameService {
-    private final List<Games> gamesFromStore;
+    private final List<Game> gamesFromStore;
 
 
     @Override
-    public Games buyGamesByName (String name) {
-        Games resGames = null;
-        for (Games games : gamesFromStore){
+    public Game buyGamesByName (String name) {
+        Game resGames = null;
+        for (Game games : gamesFromStore){
             if (games.getName().equals(name)){
                 resGames = games;
             }
@@ -27,13 +26,13 @@ public class GamesServiceImpl implements GameService {
     }
 
     @Override
-    public void sellGames(Games games) {
+    public void sellGames(Game games) {
         gamesFromStore.add(games);
     }
 
     @Override
     public boolean hasGames(String name) {
-        for (Games games : gamesFromStore){
+        for (Game games : gamesFromStore){
             if (games.getName().equals(name)){
                 return true;
             }
@@ -43,7 +42,7 @@ public class GamesServiceImpl implements GameService {
 
     @Override
     public void printGames() {
-        for (Games games : gamesFromStore){
+        for (Game games : gamesFromStore){
             System.out.println(games.getName() + " " + games.getAuthor());
         }
     }
